@@ -82,7 +82,7 @@ public class LPInstance
         }
 
         for(int i = 0; i<numCustomers; i++){
-            cplex.addEq(cplex.sum(facilUsed[i]),1);
+            cplex.addGe(cplex.sum(facilUsed[i]),1);
         }
 
         IloNumExpr allocCost = cplex.numExpr();
